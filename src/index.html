@@ -1,34 +1,25 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Shopping Cart</title>
-    <link rel="stylesheet" type="text/css" href="shoppingcart-styles.css">
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <title>Shopping Cart</title>
+        <link rel="stylesheet" type="text/css" href="shoppingcart-styles.css">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="Basic Shopping Cart with Vuejs">
-    <meta name="author" content="Ramakrishnan A">
-    <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1">
-</head>
-<body>
-<div class="nav-bar"></div>
-<div id="app">
-    <div class="product">
-        <div class="product-image">
-            <img v-bind:src="image" v-bind:alt="Images of Socks"/>
+        <meta name="description" content="Basic Shopping Cart with Vuejs">
+        <meta name="author" content="Ramakrishnan A">
+        <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1">
+    </head>
+    <body>
+        <div class="nav-bar"></div>
+        <div id="app">
+            <div v-if="cart.length > 0" class="cart">Cart has {{cart.length}} item(s)</div>
+            <div v-else class="cart">Cart has no items</div>
+            <product :premium="premium" v-on:@add-to-cart="updateCart" v-on:@remove-from-cart="removeFromCart"></product>
         </div>
 
-        <div class="product-info">
-            <h1>Product is {{ product }}</h1>
-            <h2>{{description}}</h2>
-        </div>
-    </div>
-
-
-</div>
-
-<script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
-<script src="main.js"></script>
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+    <script src="main.js"></script>
+    </body>
 </html>

@@ -48,6 +48,7 @@ img {
 
 button {
     margin-top: 30px;
+    margin: 5px;
     border: none;
     background-color: #1E95EA;
     color: white;
@@ -86,4 +87,8 @@ textarea {
 .activeTab {
     color: #16C0B0;
     text-decoration: underline;
+}
+
+.strikeThrough {
+    text-decoration: line-through;
 }
