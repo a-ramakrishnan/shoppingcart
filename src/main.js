@@ -1,8 +1,8 @@
-import Vue from 'vue'
-import App from './App.vue'
-
-Vue.config.productionTip = false
-
-new Vue({
-  render: h => h(App),
-}).$mount('#app')
+var app = new Vue({
+  el: "#app",
+  data: {
+    product: "Socks",
+    description: "This is made of pure cotton.",
+    image: "./assets/vmSocks-green-onWhite.jpg",
+  },
+});
